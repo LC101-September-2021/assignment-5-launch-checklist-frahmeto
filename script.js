@@ -1,4 +1,3 @@
-
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
     
@@ -9,14 +8,14 @@ window.addEventListener("load", function() {
             listedPlanets = result;
             console.log(listedPlanets);
         }).then(function () {
-           // console.log(listedPlanets);
+           //console.log(listedPlanets);
             // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-            let ListedPlanets = pickPlanet(listedPlanets);
-            myFetch();
-            pickPlanet(planets);
-            addDestinationInfo(document, ListedPlanets.name, ListedPlanets.diameter, ListedPlanets.star, ListedPlanets.distance, ListedPlanets.moons, ListedPlanets.imageUrl);
+           // let ListedPlanets = pickPlanet(listedPlanets);
+           // let planets = pickPlanet(listedPlanets);
             // myFetch();
-            // pickPlanet(planets);
+            //pickPlanet(planets);
+            let planet = pickPlanet(listedPlanets);
+            addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image)
         });
 
    let list = document.getElementById("faultyItems");

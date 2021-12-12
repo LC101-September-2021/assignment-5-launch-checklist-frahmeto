@@ -3,20 +3,17 @@
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
 
-    let div = document.getElementById("missionTaget");
-    
-// Here is the HTML formatting for our mission target div.
-            div.innerHTML = ` 
-             <h2>Mission Destination</h2>
-                <ol>
-                    <li>Name:${name} </li>
-                    <li>Diameter:${diameter}</li>
-                    <li>Star:${star}</li>
-                    <li>Distance from Earth:${distance}</li>
-                    <li>Number of Moons:${moons}</li>
-                </ol>
-                  <img src="${imageUrl}"> 
-                `;
+    document.querySelector("div[id=missionTarget]").innerHTML=
+    `<h2>Mission Destination</h2>
+    <ol>
+        <li>Name: ${name}</li>
+        <li>Diameter: ${diameter}</li>
+        <li>Star: ${star}</li>
+        <li>Distance from Earth: ${distance}</li>
+        <li>Number of Moons: ${moons}</li>
+    </ol>
+    <img src="${imageUrl}">`;
+
 
 }
 
@@ -105,10 +102,38 @@ async function myFetch() {
     return planetsReturned;
 }
 
+
 function pickPlanet(planets) {
-    let index = Math.floor(Math.random() * (planets.length));
+    let randomPlanet = planets.length;
+    let index = Math.floor(Math.random()*randomPlanet);
     return planets[index];
-    }   
+}
+
+
+
+
+
+
+
+
+
+// function pickPlanet(planets) {
+//     let index = Math.floor(Math.random() * planets.length);
+//     return planets[index];
+//     }  
+
+// // Here is the HTML formatting for our mission target div.
+//   div.innerHTML = ` 
+//     <h2>Mission Destination</h2>
+//       <ol>
+//         <li>Name:${name} </li>
+//         <li>Diameter:${diameter}</li>
+//         <li>Star:${star}</li>
+//         <li>Distance from Earth:${distance}</li>
+//         <li>Number of Moons:${moons}</li>
+//         </ol>
+//         <img src="${imageUrl}"> 
+//       `;
 
 // module.exports.addDestinationInfo = addDestinationInfo;
 // module.exports.validateInput = validateInput;
